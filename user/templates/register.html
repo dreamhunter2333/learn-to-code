@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Homepage</title>
+</head>
+
+<body>
+    <form method="POST">
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" required placeholder="Your name" name="name" value="{{name}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" required placeholder="Choose a secure password" value="{{password}}" name="password"
+                class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <a href="/login">Login</a>
+    </form>
+</body>
+
+</html>

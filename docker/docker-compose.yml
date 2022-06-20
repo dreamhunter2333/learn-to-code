@@ -1,0 +1,33 @@
+services:
+
+  ubuntu-learn:
+    image: ubuntu-learn
+    container_name: ubuntu-learn
+    command: sh -c 'while true; do sleep 1; done'
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../:/app/
+
+  mysql-db:
+    image: mysql
+    container_name: mysql-db
+    platform: linux/amd64
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'main'
+      MYSQL_USER: 'docker'
+      MYSQL_PASSWORD: 'docker'
+      MYSQL_ROOT_PASSWORD: 'docker'
+    ports:
+      - '3306'
+    expose:
+      - '3306'
+    volumes:
+      - docker-db:/var/lib/mysql
+
+volumes:
+  docker-db:
