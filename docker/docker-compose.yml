@@ -10,6 +10,15 @@ services:
     volumes:
       - ../:/app/
 
+  ubuntu-ssh:
+    image: ubuntu-ssh
+    container_name: ubuntu-ssh
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.ssh
+    ports:
+      - '22'
+
   mysql-db:
     image: mysql
     container_name: mysql-db
