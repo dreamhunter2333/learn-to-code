@@ -16,6 +16,19 @@
                 "0.0.0.0"
             ],
             "jinja": true
+        },
+        {
+            "name": "Python: WSS",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "cwd": "${workspaceFolder}/ws",
+            "args": [
+                "main:app",
+                "--host",
+                "0.0.0.0"
+            ],
+            "jinja": true
         }
     ]
 }
