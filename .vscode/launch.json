@@ -18,11 +18,24 @@
             "jinja": true
         },
         {
-            "name": "Python: WSS",
+            "name": "Python: WS Chat",
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
             "cwd": "${workspaceFolder}/ws",
+            "args": [
+                "main:app",
+                "--host",
+                "0.0.0.0"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Python: WS Chat V2",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "cwd": "${workspaceFolder}/ws-v2",
             "args": [
                 "main:app",
                 "--host",
